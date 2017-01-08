@@ -16,5 +16,9 @@
     "url": "https://github.com/xz64/nightlife-coordination/issues"
   },
   "homepage": "https://github.com/xz64/nightlife-coordination",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "convict": "^2.0.0",
+    "koa": "^1.2.4"
+  }
 }
