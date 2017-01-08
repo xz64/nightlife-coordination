@@ -6,6 +6,21 @@ var conf = convict({
     format: 'port',
     default: 8080,
     env: 'PORT'
+  },
+  github_client_id: {
+    doc: 'github client id',
+    default: '',
+    env: 'GITHUB_CLIENT_ID'
+  },
+  github_client_secret: {
+    doc: 'github client secret',
+    default: '',
+    env: 'GITHUB_CLIENT_SECRET'
+  },
+  github_callback_url: {
+    doc: 'github callback url',
+    default: '',
+    env: 'GITHUB_CALLBACK_URL'
   }
 });
 
