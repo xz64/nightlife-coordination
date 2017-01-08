@@ -23,6 +23,7 @@
     "koa-bodyparser": "^2.3.0",
     "koa-passport": "^1.4.0",
     "koa-router": "^5.4.0",
+    "mongoose": "^4.7.6",
     "passport-github": "^1.1.0",
     "server-destroy": "^1.0.1"
   }

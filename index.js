@@ -4,6 +4,7 @@ const koa = require('koa');
 const passport = require('koa-passport');
 const bodyParser = require('koa-bodyparser');
 
+const db = require('./db');
 const authStrategies = require('./authStrategies');
 const conf = require('./config');
 const router = require('./routes');
@@ -27,11 +28,13 @@ destroyable(server);
 
 function shutdown() {
   console.log('shutting down');
+  db.close();
   server.destroy();
 }
 
 process.on('SIGINT', shutdown);
 process.on('SIGTERM', shutdown);
 
-server.listen(conf.get('port'));
-
+db.open().then(function() {
+  server.listen(conf.get('port'));
+});

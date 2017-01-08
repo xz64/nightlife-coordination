@@ -7,6 +7,11 @@ var conf = convict({
     default: 8080,
     env: 'PORT'
   },
+  mongodb_uri: {
+    doc: 'the mongodb uri',
+    default: 'mongodb://localhost:27017/nightlife',
+    env: 'MONGODB_URI'
+  },
   github_client_id: {
     doc: 'github client id',
     default: '',
