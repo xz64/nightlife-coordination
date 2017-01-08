@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 
 const conf = require('./config');
 
+mongoose.Promise = Promise;
+
 mongoose.connect(conf.get('mongodb_uri'));
 
 const db = mongoose.connection;
