@@ -1,9 +1,13 @@
 var Router = require('koa-router');
 
-var loginRouter = require('./login');
+var authRouter = require('./auth');
 
 var router = new Router();
 
-router.use('', loginRouter.routes(), loginRouter.allowedMethods());
+router.get('/public', function* () {
+  this.body = { message: 'public', isAuthenticated: this.isAuthenticated() };
+});
+
+router.use('', authRouter.routes(), authRouter.allowedMethods());
 
 module.exports = router;

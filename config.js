@@ -12,6 +12,11 @@ var conf = convict({
     default: 'mongodb://localhost:27017/nightlife',
     env: 'MONGODB_URI'
   },
+  session_secret: {
+    doc: 'the secret for creating session ids',
+    default: 'test',
+    env: 'SESSION_SECRET'
+  },
   github_client_id: {
     doc: 'github client id',
     default: '',
