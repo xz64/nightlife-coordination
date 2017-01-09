@@ -1,9 +1,9 @@
 const Router = require('koa-router');
 const HttpStatus = require('http-status-codes');
 
-const router = new Router();
-
 const googleMapsClient = require('../../googleMapsClient');
+
+const router = new Router();
 
 router.get('/places', function* () {
   const loc = this.query['loc'];

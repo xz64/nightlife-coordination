@@ -35,6 +35,16 @@ function findRestaurants(place) {
     });
 }
 
+function findPhoto(photoId) {
+  return googleMapsClient.placesPhoto({
+    photoreference: photoId,
+    maxwidth: 64,
+    maxheight: 64
+  })
+  .asPromise();
+}
+
 module.exports = {
-  findRestaurants: findRestaurants
+  findRestaurants: findRestaurants,
+  findPhoto: findPhoto
 };
