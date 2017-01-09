@@ -31,6 +31,11 @@ var conf = convict({
     doc: 'github callback url',
     default: '',
     env: 'GITHUB_CALLBACK_URL'
+  },
+  googleApiKey: {
+    doc: 'google server API key',
+    default: '',
+    env: 'GOOGLE_API_KEY'
   }
 });
 
