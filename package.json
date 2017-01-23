@@ -20,6 +20,7 @@
   "dependencies": {
     "@google/maps": "^0.3.1",
     "convict": "^2.0.0",
+    "cron": "^1.2.1",
     "http-status-codes": "^1.0.6",
     "koa": "^1.2.4",
     "koa-bodyparser": "^2.3.0",

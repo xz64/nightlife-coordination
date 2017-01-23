@@ -9,6 +9,7 @@ const db = require('./db');
 const authStrategies = require('./authStrategies');
 const conf = require('./config');
 const router = require('./routes');
+const scheduler = require('./scheduler');
 
 const app = koa();
 
@@ -41,6 +42,7 @@ destroyable(server);
 
 function shutdown() {
   console.log('shutting down');
+  scheduler.stop();
   db.close();
   server.destroy();
 }
@@ -49,5 +51,6 @@ process.on('SIGINT', shutdown);
 process.on('SIGTERM', shutdown);
 
 db.open().then(function() {
+  scheduler.start();
   server.listen(conf.get('port'));
 });
