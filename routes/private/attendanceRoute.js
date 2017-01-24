@@ -21,9 +21,10 @@ router.post('/register',  function* () {
   if (place.goers.indexOf(userId) === -1) {
     place.goers.push(this.req.user._id);
     yield place.save();
+    this.body = {};
+  } else {
+    this.status = HttpStatus.BAD_REQUEST;
   }
-
-  this.body = {};
 });
 
 router.post('/unregister', function* () {
