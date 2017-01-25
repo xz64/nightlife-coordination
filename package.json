@@ -27,6 +27,7 @@
     "koa-generic-session": "^1.11.4",
     "koa-passport": "^1.4.0",
     "koa-router": "^5.4.0",
+    "koa-static": "^2.0.0",
     "mongoose": "^4.7.6",
     "mongoose-findorcreate": "^0.1.2",
     "passport-github": "^1.1.0",

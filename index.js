@@ -1,6 +1,7 @@
 const destroyable = require('server-destroy');
 const http = require('http');
 const koa = require('koa');
+const koaStatic = require('koa-static');
 const passport = require('koa-passport');
 const bodyParser = require('koa-bodyparser');
 const session = require('koa-generic-session');
@@ -17,6 +18,8 @@ app.keys = [conf.get('session_secret')];
 app.use(session());
 
 app.use(bodyParser());
+
+app.use(koaStatic('public'));
 
 authStrategies.forEach(function(authStrategy) {
   passport.use(authStrategy);
